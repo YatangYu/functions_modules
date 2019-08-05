@@ -3,14 +3,80 @@
   <head>
     <meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
-    <title>Python</title>
+    <title>Functions and Modules</title>
   </head>
   <body>
-<h1>Python</h1>
-<ol>
-  <li><a href="https://yatangyu.github.io/python-base-skill-i/">Python Base Skill (I)<a/></li>
-  <li><a href="https://yatangyu.github.io/python-base-skill-i/">Python Base Skill (II)<a/></li>
-  <li><a href="https://yatangyu.github.io/python-base-skill-i/">Some modulous (I)<a/></li>
-<ol>
+<h1>Functions and Modules</h1>
+<pre>  寫程式時，我們常常會用到函式(function)，目的是讓我們的程式看起來更有系統。另外我們也可以從模組(module)中引用別人寫好的函式省去自己重寫的麻煩。
+這篇我們會介紹函式的定義方式、模組的引入，以及一些物理、數學上常用的模組給大家。</pre>
+
+<h2>定義函式</h2>
+<pre>  函式的應用最單純的就是定義一個數學函數。比如函數f(x)=x<sup>3</sup>，code:
+
+<b>def f(x):
+    return x**3</b>
+	
+這樣我們就把f定為一個函式了，我們可以試著打印 <mark>f(2)</mark> ，得到的應該會是 8 。
+
+定義函式方式:
+<mark>def function(x1, x2, ...):
+	processes
+    return value
+
+function:函式的名稱
+x1, x2:輸入的變數
+processes:中間的處理過程
+value:處理後的結果</mark>
+
+下面大家可以參考一個比較複雜的函式並使用看看:
+
+</pre>
+
+<h2>模組的引入與模組內涵式使用</h2>
+<pre>  要使用別人寫的模組必須先將其 <mark>import(引入)</mark> 到程式裡，接著才能使用，比如我們想要使用 time module 裡的 time 函式印出時間，
+引入與使用有以下幾種方式:
+
+1.把模組取一個新的在自己的程式裡使用的名子引入，再使用函式 (較常使用的方式)
+<b>import time as tm
+print(tm.time())</b>
+
+2.引入整個模組 (僅需使用一種模組內的函式)
+<b>from time import*
+print(time())</b>
+
+3.只引入要用的函式 (僅需使用模組內的少數函式)
+<b>from time import time
+print(time())</b></pre>
+
+<h2>常用模組介紹</h2>
+<h3>time</h3>
+<pre>  time module 中有許多與時間相關的函式，這邊介紹常用的計時。
+time()函式不需要放入任何變數，他return的值是從 1970/1/1 00:00:00 到現在經過的秒數時間。
+我們可以利用時間差來計算程式碼所花費的時間，如下:
+
+<b>from time import time
+start=time()
+for i in range(1000000):
+    a=1+1
+end=time()
+print(end-start)</b>
+
+  上面程式碼我們利用start與end兩個值相減計算執行1000000次加法的大約時間，會需要跑這麼多次是因為加法的運算時間太短，
+必須增加次數才測得到。大家可以善用time函示來計算各種程式花的時間。</pre>
+
+<h3>numpy</h3>
+<pre>  numpy module 提供很多數學相關的函式以及π、e等特別數字的近似數值。
+numpy把<mark>pi</mark>定義為一個特殊的變數，數值是3.141592653589793(float type)，你可以試試看code:
+
+<b>import numpy as np
+print(np.pi)</b>
+
+  再來介紹array，</pre>
+
+<h3>matplotlib.pyplot</h3>
+
+<pre>  
+</pre>
+
   </body>
 </html>
