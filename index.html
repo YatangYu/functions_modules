@@ -40,6 +40,10 @@ value:處理後的結果</mark>
 <b>import time as tm
 print(tm.time())</b>
 
+  命名是為了減少程式碼，也可以不用另取名字，如:
+<b>import time
+print(time.time())</b>
+
 2.引入整個模組 (僅需使用一種模組內的函式)
 <b>from time import*
 print(time())</b>
@@ -59,7 +63,7 @@ start=time()
 for i in range(1000000):
     a=1+1
 end=time()
-print(end-start)</b>
+print("use",end-start,"s")</b>
 
   上面程式碼我們利用start與end兩個值相減計算執行1000000次加法的大約時間，會需要跑這麼多次是因為加法的運算時間太短，
 必須增加次數才測得到。大家可以善用time函示來計算各種程式花的時間。</pre>
@@ -69,11 +73,42 @@ print(end-start)</b>
 numpy把<mark>pi</mark>定義為一個特殊的變數，數值是3.141592653589793(float type)，你可以試試看code:
 
 <b>import numpy as np
-print(np.pi)</b>
+print("π=",np.pi)</b>
 
-  再來介紹array，</pre>
+  再來介紹array，array(陣列)可以用來儲存一系列的資料工用和list相近。
+用於list的指令與運算(+,*,append)都是對大小上的操作；而用於array的運算則是對元素的操作，參考code:
+<b>a=np.array([0,1,2])
+b=np.array([3,4,5])
+print("a+b=",a+b)
+print("a*3=",a*3)
+print("a*b=",a*b)</pre>
+
+程式碼前兩行分別定義a,b兩array，後面則呈現彼此作運算的結果。程式的執行結果是:
+<b>a+b= [3 5 7]
+a*3= [0 3 6]
+a*b= [ 0  4 10]</pre>
+
+  由此，各位應該可以看出，array間的運算是讓同一個位置的元素做運算，也因此，不同大小的array是不能做運算的。
+此外，由於是元素間的運算，array可以用各種算符來運算，與只能使用 + & * 的list不同。
+
+最後簡單提一下，numpy有許多數學函數可以用，像是三角函數(sin,cos,tan)、反三角函數(arcsin等)、指數函數(exp)、甚至是矩陣運算。
 
 <h3>matplotlib.pyplot</h3>
+  這個模組主要提供我們繪圖的功能，各式各樣的2D圖表幾乎都能用它來畫出來，參考範例:
+  
+<b>import matplotlib.pyplot as plt
+x=[i for i in range(10)]
+y=[x[i]**2 for i in range(10)]
+plt.plot(x,y)
+plt.show()</b>
+
+  關於上面的程式碼，我們先import，接著設定x,y兩個list，再來就輪到pyplot模組出場了。
+<mark>plot</mark> 函式可以讓你放入x,y的data做x-y圖，而<mark>show</mark>函式則會把畫好的圖顯示出來。
+
+  另外還有一個常用到的繪圖函式 <mark>scatter</mark> ，plot繪畫出折線圖，而scatter則是畫出散佈圖，下面給是兩種圖的比較:
+  
+<img src="plotting.png" alt="plotting" title="plotting">
+<img src="scattering.png" alt="scattering" title="scattering">
 
 <pre>  
 </pre>
