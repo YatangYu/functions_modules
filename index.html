@@ -81,20 +81,20 @@ print("π=",np.pi)</b>
 b=np.array([3,4,5])
 print("a+b=",a+b)
 print("a*3=",a*3)
-print("a*b=",a*b)</pre>
+print("a*b=",a*b)</b>
 
 程式碼前兩行分別定義a,b兩array，後面則呈現彼此作運算的結果。程式的執行結果是:
 <b>a+b= [3 5 7]
 a*3= [0 3 6]
-a*b= [ 0  4 10]</pre>
+a*b= [ 0  4 10]</b>
 
   由此，各位應該可以看出，array間的運算是讓同一個位置的元素做運算，也因此，不同大小的array是不能做運算的。
 此外，由於是元素間的運算，array可以用各種算符來運算，與只能使用 + & * 的list不同。
 
-最後簡單提一下，numpy有許多數學函數可以用，像是三角函數(sin,cos,tan)、反三角函數(arcsin等)、指數函數(exp)、甚至是矩陣運算。
+最後簡單提一下，numpy有許多數學函數可以用，像是三角函數(sin,cos,tan)、反三角函數(arcsin等)、指數函數(exp)、甚至是矩陣運算。</pre>
 
 <h3>matplotlib.pyplot</h3>
-  這個模組主要提供我們繪圖的功能，各式各樣的2D圖表幾乎都能用它來畫出來，參考範例:
+<pre>  這個模組主要提供我們繪圖的功能，各式各樣的2D圖表幾乎都能用它來畫出來，參考範例:
   
 <b>import matplotlib.pyplot as plt
 x=[i for i in range(10)]
@@ -105,13 +105,13 @@ plt.show()</b>
   關於上面的程式碼，我們先import，接著設定x,y兩個list，再來就輪到pyplot模組出場了。
 <mark>plot</mark> 函式可以讓你放入x,y的data做x-y圖，而<mark>show</mark>函式則會把畫好的圖顯示出來。
 
-  另外還有一個常用到的繪圖函式 <mark>scatter</mark> ，plot繪畫出折線圖，而scatter則是畫出散佈圖，下面給是兩種圖的比較:
+  另外還有一個常用到的繪圖函式 <mark>scatter</mark> ，plot繪畫出折線圖，而scatter則是畫出散佈圖，下面是兩種圖的比較:
   
+plotting
 <img src="plotting.png" alt="plotting" title="plotting">
-<img src="scattering.png" alt="scattering" title="scattering">
 
-<pre>  
-</pre>
+scattering
+<img src="scattering.png" alt="scattering" title="scattering"></pre>
 
   </body>
 </html>
